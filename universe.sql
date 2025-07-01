@@ -54,7 +54,9 @@ CREATE TABLE public.discovery (
     planet_id integer,
     moon_id integer,
     name character varying(30) NOT NULL,
-    description text
+    description text,
+    discovered_by text NOT NULL,
+    discovered_date date
 );
 
 
