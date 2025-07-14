@@ -130,7 +130,8 @@ CREATE TABLE public.moon (
     planet_id integer,
     name character varying(30) NOT NULL,
     description text,
-    size_in_km numeric
+    size_in_km numeric,
+    is_spherical boolean
 );
 
 
