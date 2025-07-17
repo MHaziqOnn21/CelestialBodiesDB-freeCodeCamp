@@ -93,7 +93,7 @@ CREATE TABLE public.galaxy (
     name character varying(30) NOT NULL,
     description text,
     size_in_lightyear numeric,
-    number_of_stars integer
+    number_of_stars bigint
 );
 
 
@@ -281,6 +281,12 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.galaxy VALUES (1, 'Milky Way', 'A barred spiral galaxy that contains our Solar System.', 105700, 100000000000);
+INSERT INTO public.galaxy VALUES (2, 'Andromeda', 'The nearest spiral galaxy to the Milky Way, on a collision course with it.', 220000, 1000000000000);
+INSERT INTO public.galaxy VALUES (3, 'Triangulum', 'A small spiral galaxy, third-largest in the Local Group', 60000, 40000000000);
+INSERT INTO public.galaxy VALUES (4, 'Sombrero', 'A spiral galaxy with a bright nucleus and large central bulge', 50000, 800000000000);
+INSERT INTO public.galaxy VALUES (5, 'Large Magellanic Cloud', 'A satellite galaxy of the Milky Way, irregular in shape', 14000, 10000000000);
+INSERT INTO public.galaxy VALUES (6, 'GN-z11', 'One of the oldest and most distant galaxies ever observed', 25000, 1000000000);
 
 
 --
@@ -293,12 +299,30 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.planet VALUES (1, 1, 'Earth', 'The oly known planet to support life, rich in water and breathable atmosphere.', 12742, 1, true);
+INSERT INTO public.planet VALUES (2, 1, 'Mars', 'A rocky planet with a thin atmosphere, showing signs of ancient water flow.', 6779, 2, false);
+INSERT INTO public.planet VALUES (3, 1, 'Jupiter', 'The largest planet in the Solar System, a gas giant with dozens of moons.', 139820, 92, false);
+INSERT INTO public.planet VALUES (4, 2, 'RX-15b', 'A hot gas giant orbiting close to RX J0042.3+4115, likely todally locked.', 160000, 0, false);
+INSERT INTO public.planet VALUES (5, 3, 'V1-Cetus', 'An ocean world orbiting M33-V1 with possible subsurface ocean.', 9800, 1, false);
+INSERT INTO public.planet VALUES (6, 3, 'V1-Borealis', 'An icy exoplanet on a wide elliptical orbit.', 6000, 3, false);
+INSERT INTO public.planet VALUES (7, 4, 'HD100546 b', 'A gas giant forming within a circumstellar disk.', 70000, 0, false);
+INSERT INTO public.planet VALUES (8, 5, 'Tarantula Prime', 'A scorched terrestrial planet near a massive star, exposed to intense radiation.', 8700, 0, false);
+INSERT INTO public.planet VALUES (9, 6, 'GNZ11-Eden', 'A hypothetical Earth-sized planet from early universe models.', 12000, 1, NULL);
+INSERT INTO public.planet VALUES (10, 6, 'GNZ11-Fury', 'A massize rocky planet with extreme atmospheric pressure.', 16000, 0, false);
+INSERT INTO public.planet VALUES (11, 6, 'GNZ11-Oasis', 'A hypothetical exoplanet with balanced conditions, possible habitable.', 13500, 2, true);
+INSERT INTO public.planet VALUES (12, 2, 'RX-Mirage', 'A rogue gas giant captured into orbit; irregular magnetic activity.', 12500, 5, false);
 
 
 --
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.star VALUES (1, 1, 'Sun', 'A G-type main-sequence star at the center of the Solar System.', 1.0, 8);
+INSERT INTO public.star VALUES (2, 2, 'RX J0042.3+4115', 'A massive X-ray binary system located in Andromeda', 30.0, 0);
+INSERT INTO public.star VALUES (3, 3, 'M33-V1', 'A Cepheid variable star used in early extragalactic distance measurements.', 60.0, 2);
+INSERT INTO public.star VALUES (4, 4, 'HD 100546', 'A young Herbig Ae/Be star surrounded by a protoplanetary disk.', 1.5, 1);
+INSERT INTO public.star VALUES (5, 5, 'R136a1', 'One of the most massive stars knowns, in the Tarantula Nebula.', 35.4, 0);
+INSERT INTO public.star VALUES (6, 6, 'GNZ-11-Alpha', 'A hypothetical ancient Population III star in GN-z11, assumed massive.', 50.0, 0);
 
 
 --
@@ -312,7 +336,7 @@ SELECT pg_catalog.setval('public.discovery_discovery_id_seq', 1, false);
 -- Name: galaxy_galaxy_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 1, false);
+SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 
 
 --
@@ -326,14 +350,14 @@ SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
 -- Name: planet_planet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.planet_planet_id_seq', 1, false);
+SELECT pg_catalog.setval('public.planet_planet_id_seq', 12, true);
 
 
 --
 -- Name: star_star_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.star_star_id_seq', 1, false);
+SELECT pg_catalog.setval('public.star_star_id_seq', 6, true);
 
 
 --
