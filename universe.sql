@@ -275,6 +275,9 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: discovery; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.discovery VALUES (1, 1, NULL, NULL, NULL, 'Milky Way Mapping', 'First detailed star maps of the Milky Way using radio telescopes.', 'Karl Jansky', '1933-01-01');
+INSERT INTO public.discovery VALUES (2, 2, NULL, NULL, NULL, 'Andromeda Spiral', 'Identified as separate galaxy from the Milky Way.', 'Edwin Hubble', '1924-10-01');
+INSERT INTO public.discovery VALUES (3, NULL, 1, NULL, NULL, 'Solar Spectrum', 'First analysis of sunlight composition.', 'Joseph Fraunhofer', '1814-05-01');
 
 
 --
@@ -293,6 +296,26 @@ INSERT INTO public.galaxy VALUES (6, 'GN-z11', 'One of the oldest and most dista
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.moon VALUES (1, 1, 'Moon', 'Earth''s only natural satellite, tidally locked, and spherical.', 3474, true);
+INSERT INTO public.moon VALUES (2, 2, 'Phobos', 'One of Mars'' two moons, irregular in shape, likely a captured asteroid.', 22.4, false);
+INSERT INTO public.moon VALUES (3, 2, 'Deimos', 'Smaller than Phobos, also likely captured from the asteroid belt.', 12.4, false);
+INSERT INTO public.moon VALUES (4, 3, 'Ganymede', 'Largest moon in the Solar System, orbits Jupiter.', 5268, true);
+INSERT INTO public.moon VALUES (5, 3, 'Callisto', 'Heavily cratered Jovian moon, thought to have subsurface ocean.', 4821, true);
+INSERT INTO public.moon VALUES (6, 3, 'Io', 'Heavily cratered Jovian moon, thought to have subsurface ocean.', 3643, true);
+INSERT INTO public.moon VALUES (7, 3, 'Europa', 'Ice-covered moon with potential subsurface ocean.', 3121, true);
+INSERT INTO public.moon VALUES (8, 3, 'Amalthea', 'Irregula-shaped innner moon of Jupiter.', 250, false);
+INSERT INTO public.moon VALUES (9, 4, 'RX15b-Alpha', 'Tiny moon orbiting RX-15b; likely a captured body.', 90, false);
+INSERT INTO public.moon VALUES (10, 5, 'Cetus-Lumen', 'Frozen moon with speculated bioluminescent features.', 1500, true);
+INSERT INTO public.moon VALUES (11, 6, 'Borealis-A', 'Icy irregular satellite.', 400, false);
+INSERT INTO public.moon VALUES (12, 6, 'Borealis-B', 'Larger spherical moon with subsurface pressure.', 1100, true);
+INSERT INTO public.moon VALUES (13, 7, 'HD-B1', 'Protoplanetary satellite embedded in gas ring.', 700, true);
+INSERT INTO public.moon VALUES (14, 9, 'Eden-1', 'Tidally locked moon with thin atmosphere.', 3000, true);
+INSERT INTO public.moon VALUES (15, 9, 'Eden-2', 'Dense rocky moon with significant albedo variation.', 1900, true);
+INSERT INTO public.moon VALUES (16, 10, 'Fury-X', 'Charred rock captured into orbit; likely fragmented.', 400, false);
+INSERT INTO public.moon VALUES (17, 11, 'Oasis-Pelago', 'Oceanic moon, mostly liquid water with icy crust.', 3200, true);
+INSERT INTO public.moon VALUES (18, 11, 'Oasis-Vela', 'Tidally heated, dense core; suspected internal ocean.', 2700, true);
+INSERT INTO public.moon VALUES (19, 12, 'Mirage-A', 'Irregular outer moon with retrograde orbit', 220, false);
+INSERT INTO public.moon VALUES (20, 12, 'Mirage-B', 'Spherical inner moon with iron-rich core.', 1600, true);
 
 
 --
@@ -329,7 +352,7 @@ INSERT INTO public.star VALUES (6, 6, 'GNZ-11-Alpha', 'A hypothetical ancient Po
 -- Name: discovery_discovery_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.discovery_discovery_id_seq', 1, false);
+SELECT pg_catalog.setval('public.discovery_discovery_id_seq', 3, true);
 
 
 --
@@ -343,7 +366,7 @@ SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 -- Name: moon_moon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
+SELECT pg_catalog.setval('public.moon_moon_id_seq', 20, true);
 
 
 --
